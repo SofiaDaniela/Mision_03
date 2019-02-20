@@ -1,0 +1,40 @@
+# Autor: Sofía Daniela Méndez Sandoval, A01242259
+# Descripción: Este programa calcula el área y perímetro de un trapecio.
+
+def main():
+
+    bmayor = int(input("Inserte el valor de la base mayor del trapecio: "))
+    bmenor = int(input("Inserte el valor de la base menor del trapecio: "))
+    altura = int(input("Ingrese el valor de la altura del trapecio: "))
+
+    area = calcularArea(bmayor, bmenor, altura)
+    print("El área del trapecio es: ", format(area, ".2f"), "cm cuadrados")
+
+    perimetro = calcularPerimetro(bmayor, bmenor, altura)
+    print("El perímetro del trapecio es: ", format(perimetro, ".2f"), "cm")
+
+
+def calcularArea(bmayor, bmenor, altura):
+
+    area = (bmayor+bmenor)*altura/2
+
+    return area
+
+def calcularLado (bmayor, bmenor, altura):
+
+    basel = (bmayor - bmenor)/2
+
+    lado = ((basel**2)+(altura**2))**0.5
+
+    return lado
+
+
+def calcularPerimetro(bmayor, bmenor, altura):
+
+    lado = calcularLado(bmayor, bmenor, altura)
+
+    perimetro = (bmayor + bmenor + (lado*2))
+
+    return perimetro
+
+main()

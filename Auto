@@ -1,0 +1,44 @@
+# Autor: Sofía Daniela Méndez Sandoval, A01242259
+# Descripción: Este programa calcula datos para el rendimiento y gasolina de un auto.
+
+milla = 0.6213
+galon = 0.264
+
+def main():
+
+    km = int(input("Teclea el número de kilómetros recorridos: "))
+    lit = int(input("Teclea el número de litros utilizados de gasolina: "))
+
+    kmpl = calcularKpL(km, lit)
+    print("El rendimiento de kilómetros es: ", format(kmpl, ".2f"), "km/l")
+
+    mipgal = calcularMpG(km, lit)
+    print("El rendimiento de litros por galón es: ", format(mipgal, ".2f"), "mi/gal")
+
+    kmrec = int(input("¿Cuántos kilómetros vas a recorrer? "))
+
+    litgas = calcularLpG(kmrec, kmpl)
+    print("Para recorrer", kmrec, "necesitas: ", format(litgas, ".2f"), "litros de gasolina")
+
+def calcularKpL(km, lit):
+
+        kmpl = km/lit
+
+        return kmpl
+
+def calcularMpG(km, lit):
+
+    mipgal = ((km*milla)/(lit*galon))
+
+    return mipgal
+
+def calcularLpG(kmrec, kmpl):
+
+    litrosgas = kmrec/kmpl
+
+    return litrosgas
+
+main()
+
+
+

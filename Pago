@@ -1,0 +1,37 @@
+# Autor: Sofía Daniela Méndez Sandoval, A01242259
+# Descripción: Este programa calcula el pago a un trabajador dependiendo sus horas.
+
+def main():
+
+    horasn = int(input("Teclea las horas normales trabajadas: "))
+    horase = int(input("Teclea las horas extra trabajadas: "))
+    pago = int(input("Teclea el pago por hora: "))
+
+    pagonormal = pagoNormal(horasn, pago)
+    print("El pago normal es: ", format(pagonormal, ".2f"), "pesos")
+
+    pagoextra = pagoExtra(horase, pago)
+    print("El pago extra es: ", format(pagoextra, ".2f"), "pesos")
+
+    pagototal = pagoTotal(pagoNormal(horasn, pago), pagoExtra(horase, pago))
+    print("El pago total es: ", format(pagototal, ".2f"), "pesos")
+
+def pagoNormal(horasn, pago):
+
+    pagon = horasn * pago
+
+    return pagon
+
+def pagoExtra(horase, pago):
+
+    pagoe = (horase*(1.65*pago))
+
+    return pagoe
+
+def pagoTotal(pagon, pagoe):
+
+    pagot = pagon + pagoe
+
+    return pagot
+
+main()
